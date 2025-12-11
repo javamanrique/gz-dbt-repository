@@ -73,7 +73,7 @@ sources:
           - name: paid_source
             description: Where the Ads was placed, in this case all are Adwords
           - name: campaign_key
-            description: primary key
+            description: campaign key
           - name: camPGN_name
             description: Campaign name
           - name: ads_cost
@@ -81,7 +81,10 @@ sources:
           - name: impression
             description: nb of impressions
           - name: click
-            description: nb of clicks                   
+            description: nb of clicks
+         tests:
+           - unique: 
+              column_name: "(date_date || '-' || campaign_key)"                   
 
        - name: bing
          identifier: raw_gz_bing
@@ -93,7 +96,7 @@ sources:
           - name: paid_source
             description: Where the Ads was placed, in this case all are Bing
           - name: campaign_key
-            description: primary key
+            description: campaign key
           - name: camPGN_name
             description: Campaign name
           - name: ads_cost
@@ -101,7 +104,10 @@ sources:
           - name: impression
             description: nb of impressions
           - name: click
-            description: nb of clicks  
+            description: nb of clicks
+         tests:
+           - unique: 
+              column_name: "(date_date || '-' || campaign_key)"   
 
        - name: criteo
          identifier: raw_gz_criteo
@@ -113,7 +119,7 @@ sources:
           - name: paid_source
             description: Where the Ads was placed, in this case all are Criteo
           - name: campaign_key
-            description: primary key
+            description: campaign key
           - name: camPGN_name
             description: Campaign name
           - name: ads_cost
@@ -122,6 +128,9 @@ sources:
             description: nb of impressions
           - name: click
             description: nb of clicks  
+         tests:
+           - unique: 
+              column_name: "(date_date || '-' || campaign_key)" 
 
        - name: facebook
          identifier: raw_gz_facebook
@@ -133,7 +142,7 @@ sources:
           - name: paid_source
             description: Where the Ads was placed, in this case all are Facebook
           - name: campaign_key
-            description: primary key
+            description: campaign key
           - name: camPGN_name
             description: Campaign name
           - name: ads_cost
@@ -142,3 +151,6 @@ sources:
             description: nb of impressions
           - name: click
             description: nb of clicks 
+         tests:
+           - unique: 
+              column_name: "(date_date || '-' || campaign_key)" 
