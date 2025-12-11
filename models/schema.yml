@@ -155,25 +155,26 @@ sources:
            - unique: 
               column_name: "(date_date || '-' || campaign_key)" 
 
-       - name: campaigns_day
-         identifier: int_campaigns_day
-         description: All sources daily Ads cost, impressions, clicks.
-         loaded_at_field: date_date
-         columns:
-          - name: date_date
-            description: date where the Ads was run
-          - name: paid_source
-            description: Where the Ads was placed, in this case all are Facebook
-          - name: campaign_key
-            description: campaign key
-          - name: camPGN_name
-            description: Campaign name
-          - name: ads_cost
-            description: Cost of the Ads
-          - name: impression
-            description: nb of impressions
-          - name: click
-            description: nb of clicks 
-         tests:
-           - unique: 
-              column_name: "(date_date || '-' || campaign_key)" 
+
+models:
+  - name: int_campaigns_day
+    description: Aggregated daily advertising metrics combining all ad platforms
+      (Adwords, Bing, Criteo, Facebook). Output is one row per day and source.
+    columns:
+      - name: date_date
+        description: Date of the advertising activity
+        tests:
+          - not_null
+      - name: paid_source
+        description: Advertising source (Adwords, Bing, Criteo, Facebook)
+        tests:
+          - not_null
+      - name: ads_cost
+        description: Total advertising cost for the day and source
+      - name: impressions
+        description: Total number of impressions for the day and source
+      - name: clicks
+        description: Total number of clicks for the day and source
+    tests:
+      - unique:
+          column_name: "(date_date || '-' || paid_source)"
