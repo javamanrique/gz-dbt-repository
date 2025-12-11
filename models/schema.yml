@@ -154,3 +154,26 @@ sources:
          tests:
            - unique: 
               column_name: "(date_date || '-' || campaign_key)" 
+
+       - name: campaigns_day
+         identifier: int_campaigns_day
+         description: All sources daily Ads cost, impressions, clicks.
+         loaded_at_field: date_date
+         columns:
+          - name: date_date
+            description: date where the Ads was run
+          - name: paid_source
+            description: Where the Ads was placed, in this case all are Facebook
+          - name: campaign_key
+            description: campaign key
+          - name: camPGN_name
+            description: Campaign name
+          - name: ads_cost
+            description: Cost of the Ads
+          - name: impression
+            description: nb of impressions
+          - name: click
+            description: nb of clicks 
+         tests:
+           - unique: 
+              column_name: "(date_date || '-' || campaign_key)" 
