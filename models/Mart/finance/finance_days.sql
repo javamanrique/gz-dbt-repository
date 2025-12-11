@@ -1,6 +1,6 @@
  -- finance_days.sql
 
- {{ config(materialized="table") }}
+ 
 
  WITH orders_per_day AS (
    SELECT
