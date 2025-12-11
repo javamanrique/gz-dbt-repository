@@ -63,4 +63,82 @@ sources:
             description: the cost of each product shipping
          
               
-           
+       - name: adwords
+         identifier: raw_gz_adwords
+         description: Ads using adwords
+         loaded_at_field: date_date
+         columns:
+          - name: date_date
+            description: date where the Ads was run
+          - name: paid_source
+            description: Where the Ads was placed, in this case all are Adwords
+          - name: campaign_key
+            description: primary key
+          - name: camPGN_name
+            description: Campaign name
+          - name: ads_cost
+            description: Cost of the Ads
+          - name: impression
+            description: nb of impressions
+          - name: click
+            description: nb of clicks                   
+
+       - name: bing
+         identifier: raw_gz_bing
+         description: Ads Bing Ads cost, impressions and daily clicks.
+         loaded_at_field: date_date
+         columns:
+          - name: date_date
+            description: date where the Ads was run
+          - name: paid_source
+            description: Where the Ads was placed, in this case all are Bing
+          - name: campaign_key
+            description: primary key
+          - name: camPGN_name
+            description: Campaign name
+          - name: ads_cost
+            description: Cost of the Ads
+          - name: impression
+            description: nb of impressions
+          - name: click
+            description: nb of clicks  
+
+       - name: criteo
+         identifier: raw_gz_criteo
+         description: Ads Criteo cost, impressions, clicks.
+         loaded_at_field: date_date
+         columns:
+          - name: date_date
+            description: date where the Ads was run
+          - name: paid_source
+            description: Where the Ads was placed, in this case all are Criteo
+          - name: campaign_key
+            description: primary key
+          - name: camPGN_name
+            description: Campaign name
+          - name: ads_cost
+            description: Cost of the Ads
+          - name: impression
+            description: nb of impressions
+          - name: click
+            description: nb of clicks  
+
+       - name: facebook
+         identifier: raw_gz_facebook
+         description: Ads Facebook Ads cost, impressions, clicks.
+         loaded_at_field: date_date
+         columns:
+          - name: date_date
+            description: date where the Ads was run
+          - name: paid_source
+            description: Where the Ads was placed, in this case all are Facebook
+          - name: campaign_key
+            description: primary key
+          - name: camPGN_name
+            description: Campaign name
+          - name: ads_cost
+            description: Cost of the Ads
+          - name: impression
+            description: nb of impressions
+          - name: click
+            description: nb of clicks 
